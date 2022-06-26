@@ -1,10 +1,10 @@
 class PersonController < ApplicationController
   def index
-    @Person = Person.all
+    @person = Person.all
   end
 
   def new
-    @Person = Person.new
+    @person = Person.new
   end
 
   def create
@@ -18,12 +18,12 @@ class PersonController < ApplicationController
   end
 
   def show
-    @Person = Person.show
+    @person = Person.show
   end
 
   def destroy
-    @Person = Person.find(params[:id])
-    @Person.destroy
+    @person = Person.find(params[:id])
+    @person.destroy
 
     redirect_to person_path, notice: 'Person was successfully deleted.'
   end
