@@ -18,7 +18,7 @@ class PersonController < ApplicationController
   end
 
   def show
-    @person = Person.show
+    @person = Person.find(params[:id])
   end
 
   def destroy
