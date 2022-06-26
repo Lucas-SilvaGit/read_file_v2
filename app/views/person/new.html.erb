@@ -1,40 +1,24 @@
 <div class="container">   
   <% if !@person.errors.empty? %>   
-    <div>   
+    <div>         
       <ul>   
-          <% @person.errors.full_messages.each do |msg| %>   
-            <li>
-              <%= msg %>
+        <% @person.errors.full_messages.each do |msg| %>   
+          <li>
+            <%= msg %>
             </li>   
-          <% end %>   
-      </ul>
+        <% end %>     
+      </ul>   
     </div>   
-    
-    <% if !@person.errors.empty? %>   
-      <div>   
-          
-        <ul>   
-          <% @person.errors.full_messages.each do |msg| %>   
-            <li>
-              <%= msg %>
-            </li>   
-          <% end %>
-        </ul>   
-      </div>   
-    <% end %>   
+  <% end %>     
 
   <div>   
     <%= form_for @person, html: { multipart: true } do |f| %>   
       <%= f.label :name %>   
-      <%= f.text_field :name %> 
-
+      <%= f.text_field :name %>   
       <br><br>   
-
       <%= f.label :attachment %>   
       <%= f.file_field :attachment %>   
-
       <br>   
-
       <%= f.submit "Save" %>   
     <% end %>   
   </div>   
