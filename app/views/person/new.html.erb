@@ -1,2 +1,41 @@
-<h1>Person#new</h1>
-<p>Find me in app/views/person/new.html.erb</p>
+<div class="container">   
+  <% if !@person.errors.empty? %>   
+    <div>   
+      <ul>   
+          <% @person.errors.full_messages.each do |msg| %>   
+            <li>
+              <%= msg %>
+            </li>   
+          <% end %>   
+      </ul>
+    </div>   
+    
+    <% if !@person.errors.empty? %>   
+      <div>   
+          
+        <ul>   
+          <% @person.errors.full_messages.each do |msg| %>   
+            <li>
+              <%= msg %>
+            </li>   
+          <% end %>
+        </ul>   
+      </div>   
+    <% end %>   
+
+  <div>   
+    <%= form_for @person, html: { multipart: true } do |f| %>   
+      <%= f.label :name %>   
+      <%= f.text_field :name %> 
+
+      <br><br>   
+
+      <%= f.label :attachment %>   
+      <%= f.file_field :attachment %>   
+
+      <br>   
+
+      <%= f.submit "Save" %>   
+    <% end %>   
+  </div>   
+</div>  
