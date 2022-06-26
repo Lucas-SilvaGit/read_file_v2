@@ -12,13 +12,18 @@
   <% end %>     
 
   <div>   
-    <%= form_for @person, html: { multipart: true } do |f| %>   
+    <%# <%= form_for @person, html: { multipart: true } do |f| %> 
+    <%= form_for :person do |f| %>
       <%= f.label :name %>   
       <%= f.text_field :name %>   
+
       <br><br>   
+
       <%= f.label :attachment %>   
-      <%= f.file_field :attachment %>   
+      <%= f.file_field :attachment %>  
+
       <br>   
+
       <%= f.submit "Save" %>   
     <% end %>   
   </div>   
